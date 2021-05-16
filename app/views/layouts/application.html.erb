@@ -11,6 +11,10 @@
   </head>
 
   <body>
-    <%= yield %>
+    <% if session[:current_user_id] %>
+    <nav>
+     You are logged in as: <%= @current_user.email %>
+     </nav>
+     <% end %>
   </body>
 </html>
