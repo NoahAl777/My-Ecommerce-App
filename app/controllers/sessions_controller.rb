@@ -5,10 +5,10 @@ class SessionsController < ApplicationController
   end
 
   def create
-    # look for user in database
+    # look for user in database and authenticate
     @user = User.find_by(:email => params[:email])
+    if @user && @user.authenticate(params[:password])
     # if they exist
-    if @user
     # store user id in session
       login(@user)
       redirect_to '/'

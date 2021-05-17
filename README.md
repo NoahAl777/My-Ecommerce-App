@@ -37,12 +37,14 @@ PATCH /post/:id
 -----------
 
 Authentication / Passwords
+  - add password confirmation
 
 Profile
   - Show me my purchased items
   - Show me my sold items
 
-Add description, category, and price to posts
+Posts
+  - Add description, category, and price to posts
 
 Build shopping cart
 
