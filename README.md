@@ -24,6 +24,8 @@ GET /posts/new
 POST /post
   - save the post to db
 
+-----------
+
 GET /post
   - show all posts
 

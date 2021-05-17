@@ -1,7 +1,7 @@
-<h1>All Posts</h1>
+<h1>All Available Items</h1>
 
 <ol>
 <% @posts.each do |p| %>
-  <li><%= p.topic %></li>
+  <li><%= link_to "#{p.topic} from #{p.author_user.email}", post_path(p) %></li>
 <% end %>
 </ol>

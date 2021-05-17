@@ -1,0 +1,10 @@
+<h1><%= @post.topic %></h1> 
+<h3>Author: <%= @post.author_user.email %></h3>
+
+<% if @post.accepted? %>
+  <h4>Purchased by: <%= @post.buyer_user.email %></h4>
+<% else %>
+  <%= form_for(@post) do |f| %>
+    <%= f.submit "Buy this item" %>
+  <% end %>
+<% end %>

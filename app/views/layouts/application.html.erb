@@ -11,12 +11,17 @@
   </head>
 
   <body>
-    <% if session[:current_user_id] %>
     <nav>
-     You are logged in as: <%= @current_user.email %>
-     | <a href="/logout">Logout</a>
+      <section class="utility">
+        <% if session[:current_user_id] %>
+          You are logged in as: <%= @current_user.email %> | <a href="/logout">Logout</a>
+        <% else %>
+          <%= link_to_unless_current "Login", login_path %>
+          <%= link_to_unless_current "| Sign Up", signup_path %>
+        <% end %>
+          <%= link_to_unless_current "| Shop", posts_path %>
+      </section>
      </nav>
-     <% end %>
     <%= yield %>
   </body>
 </html>
