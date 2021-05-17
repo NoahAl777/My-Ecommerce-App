@@ -13,5 +13,7 @@ Rails.application.routes.draw do
   # logout routes
   get '/logout', to: 'sessions#destroy'
 
+  resources :posts
+
   root 'application#home'
 end
