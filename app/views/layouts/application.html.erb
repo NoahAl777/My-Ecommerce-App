@@ -11,16 +11,20 @@
   </head>
 
   <body>
-    <nav>
-      <section class="utility">
-        <% if session[:current_user_id] %>
-          You are logged in as: <%= @current_user.email %> | <a href="/logout">Logout</a>
-        <% else %>
-          <%= link_to_unless_current "Login", login_path %>
-          <%= link_to_unless_current "| Sign Up", signup_path %>
-        <% end %>
-          <%= link_to_unless_current "| Shop", posts_path %>
-      </section>
+  <nav>
+    <section>
+      <%= link_to_unless_current " Shop", posts_path %>
+      <%= link_to_unless_current "| Home", root_path %>
+      <%= link_to_unless_current "| Create Post", new_post_path %>
+    </section>
+    <section class="utility">
+    <% if session[:current_user_id] %>
+      You are logged in as: <%= @current_user.email %> | <a href="/logout">Logout</a>
+    <% else %>
+      <%= link_to_unless_current "Login", login_path %>
+      <%= link_to_unless_current "| Sign Up", signup_path %>
+      <% end %>
+    </section>
      </nav>
     <%= yield %>
   </body>

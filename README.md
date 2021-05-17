@@ -34,3 +34,17 @@ GET /post/:id
 
 PATCH /post/:id
 
+-----------
+
+Authentication / Passwords
+
+Profile
+  - Show me my purchased items
+  - Show me my sold items
+
+Add description, category, and price to posts
+
+Build shopping cart
+
+Flash messages - flash[:alert] = "blabla"
+
