@@ -28,12 +28,14 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new
-    @post.topic = params["topic"]
+    @post.title = params["title"]
+    @post.price = params["price"]
+    @post.description = params["description"]
     @post.author_user_id = current_user.id
     if @post.save
       redirect_to '/posts'
     else
-      raise @pair.errors.inspect
+      render :new
     end
   end
 

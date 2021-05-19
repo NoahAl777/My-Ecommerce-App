@@ -45,6 +45,8 @@ Profile
 
 Posts
   - Add description, category, and price to posts
+  - Ability to update posts
+  - Add validation of title length
 
 Build shopping cart
 

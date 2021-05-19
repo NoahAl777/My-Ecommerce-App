@@ -1,8 +1,32 @@
 <h1>Create a Post</h1>
 
 <%= form_tag("/posts") do %>
-  <%= label_tag "Topic:" %>
-  <%= text_field_tag "topic" %>
+  <% if @post && @post.errors[:title] %>
+    <% @post.errors.full_messages_for(:title).each do |message| %>
+      <p><%= message %></p>
+    <% end %>
+  <% end %>
+  <p>
+    <%= label_tag "title", "Title:" %>
+    <%= text_field_tag "title" %>
 
+  <% if @post && @post.errors[:price] %>
+    <% @post.errors.full_messages_for(:price).each do |message| %>
+      <p><%= message %></p>
+    <% end %>
+  <% end %>
+    <%= label_tag "price", "Price:" %>
+    <%= number_field_tag "price" %>
+  </p>
+
+  <% if @post && @post.errors[:description] %>
+    <% @post.errors.full_messages_for(:description).each do |message| %>
+      <p><%= message %></p>
+    <% end %>
+  <% end %>
+  <p>
+    <%= label_tag "description", "Description:" %>
+    <%= text_area_tag "description" %>
+  </p>
   <%= submit_tag %>
 <% end %>
